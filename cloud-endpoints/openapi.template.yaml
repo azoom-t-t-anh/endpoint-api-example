@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  title: Laperm Test Cloud Endpoints
+  description: Google Cloud Endpoints API
+  version: 1.0.0
+host: 
+x-google-endpoints:
+  - name: ''
+    allowCors: True
+schemes:
+  - https
+produces:
+  - application/json
+x-google-backend:
+    address: 
+    protocol: h2
+paths:
+  /:
+    get:
+      operationId: GET
+      description: GET.
+      tags:
+        - GET
+      summary: GET
+      security:
+        - auth0_jwk: []
+      responses:
+        200:
+          description: Success.
+        400:
+          description: Bad Request.
+        401:
+          description: Unauthorized.
+        500:
+          description: InternalError
+securityDefinitions:
+  auth0_jwk:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    x-google-issuer: ""
+    x-google-jwks_uri: ""
+    x-google-audiences: ""

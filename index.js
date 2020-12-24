@@ -7,7 +7,6 @@ const cors = require('cors')
 const app = express()
 
 const corsOptionsDelegate = function (req, callback) {
-  console.log(req.origin)
   const corsOptions = { origin: true }
 
   return callback(null, corsOptions)
